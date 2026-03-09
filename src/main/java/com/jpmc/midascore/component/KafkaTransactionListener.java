@@ -7,7 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaTransactionListener {
 
-    @KafkaListener(topics = "${general.kafka-topic}")
+    @KafkaListener(
+        topics = "${general.kafka-topic}",
+        containerFactory = "kafkaListenerContainerFactory"
+    )
     public void receive(Transaction transaction) {
         System.out.println(transaction.getAmount());
     }
