@@ -11,5 +11,4 @@ public class KafkaTransactionListener {
     public void receive(Transaction transaction) {
         System.out.println(transaction.getAmount());
     }
-
 }
