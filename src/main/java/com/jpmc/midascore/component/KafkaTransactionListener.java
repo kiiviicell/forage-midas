@@ -9,9 +9,6 @@ public class KafkaTransactionListener {
 
     @KafkaListener(topics = "${general.kafka-topic}")
     public void listen(Transaction transaction) {
-
         System.out.println(transaction.getAmount());
-
     }
-
 }
